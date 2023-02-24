@@ -1,6 +1,7 @@
 ﻿using CookingClub.Models;
 using CulinaryClub.Data;
 using CulinaryClub.Interfaces;
+using CulinaryClub.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,6 +23,22 @@ namespace CulinaryClub.Controllers
         {
             MasterClass masterClass = await _masterClassRepository.GetByIdAsync(id);
             return View(masterClass);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(MasterClass masterClass)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(masterClass);
+            }
+            _masterClassRepository.Add(masterClass);
+            return RedirectToAction("Index");
         }
     }
 }
