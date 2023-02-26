@@ -16,3 +16,35 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/*ffffff*/
+
+.card {
+    border-radius: 1em;
+    text-align: center;
+    padding: 1em;
+}
+
+    .card:hover {
+        background-color: rgba(0, 0, 0, 0.1); 
+    }
+
+    .card img {
+        border-radius: 50%;
+        width: 60%;
+        margin: auto;
+    }
+
+.my-carousel {
+padding: 0;
+}
+    .my-carousel .carousel-item {
+ display: flex;
+
+    }
+
+
+
+
+
+

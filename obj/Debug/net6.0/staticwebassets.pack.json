@@ -17,6 +17,30 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "C:\\Users\\Чук\\source\\repos\\CookingClub\\wwwroot\\lib\\01.jpg",
+      "PackagePath": "staticwebassets\\lib\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Чук\\source\\repos\\CookingClub\\wwwroot\\lib\\02.jpg",
+      "PackagePath": "staticwebassets\\lib\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Чук\\source\\repos\\CookingClub\\wwwroot\\lib\\03.jpg",
+      "PackagePath": "staticwebassets\\lib\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Чук\\source\\repos\\CookingClub\\wwwroot\\lib\\1.jpg",
+      "PackagePath": "staticwebassets\\lib\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Чук\\source\\repos\\CookingClub\\wwwroot\\lib\\3.jpg",
+      "PackagePath": "staticwebassets\\lib\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Чук\\source\\repos\\CookingClub\\wwwroot\\lib\\4.jpg",
+      "PackagePath": "staticwebassets\\lib\\4.jpg"
+    },
+    {
       "Id": "C:\\Users\\Чук\\source\\repos\\CookingClub\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
