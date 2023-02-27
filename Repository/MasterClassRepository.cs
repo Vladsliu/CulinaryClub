@@ -35,6 +35,11 @@ namespace CulinaryClub.Repository
             return await _context.MasterClasses.Include(i => i.Address).FirstOrDefaultAsync(i => i.Id == id);
         }
 
+        public async Task<MasterClass> GetByIdAsyncNoTracking(int id)
+        {
+            return await _context.MasterClasses.Include(i => i.Address).AsNoTracking().FirstOrDefaultAsync(i => i.Id == id);
+        }
+
         public async Task<IEnumerable<MasterClass>> GetClubByCity(string city)
         {
             return await _context.MasterClasses.Where(c => c.Address.City.Contains(city)).ToListAsync();

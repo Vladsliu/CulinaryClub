@@ -6,6 +6,7 @@ namespace CulinaryClub.Interfaces
     {
         Task<IEnumerable<MasterClass>> GetAll();
         Task<MasterClass> GetByIdAsync(int id);
+        Task<MasterClass> GetByIdAsyncNoTracking(int id);
         Task<IEnumerable<MasterClass>> GetClubByCity(string city);
         bool Add(MasterClass masterClass);
         bool Update(MasterClass masterClass);

@@ -62,5 +62,65 @@ namespace CulinaryClub.Controllers
             }
             return View(masterClassVM);
         }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            var masterClass = await _masterClassRepository.GetByIdAsync(id);
+            if (masterClass == null) return View("Error");
+            var masterClassVM = new EditMasterClassViewModel
+            {
+                Title = masterClass.Title,
+                Description = masterClass.Description,
+                AddressId = masterClass.AddressId,
+                Address = masterClass.Address,
+                URL = masterClass.Image,
+                MasterClassCategory = masterClass.MasterClassCategory
+            };
+            return View(masterClassVM);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditMasterClassViewModel masterClassVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Failed to edit master class");
+                return View("Error", masterClassVM);
+            }
+
+            var userMasterClass = await _masterClassRepository.GetByIdAsyncNoTracking(id);
+
+            if (userMasterClass != null)
+            {
+                try
+                {
+                    await _photoService.DeletePhotoAsync(userMasterClass.Image);
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", "Could not delete photo");
+                    return View(masterClassVM);
+                }
+                var photoResult = await _photoService.AddPhotoAsync(masterClassVM.Image);
+
+                var masterClass = new MasterClass
+                {
+                    Id = id,
+                    Title = masterClassVM.Title,
+                    Description = masterClassVM.Description,
+                    Image = photoResult.Url.ToString(),
+                    AddressId = masterClassVM.AddressId,
+                    Address = masterClassVM.Address
+                };
+
+                _masterClassRepository.Update(masterClass);
+
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(masterClassVM);
+            }
+        }
     }
 }
