@@ -26,7 +26,7 @@ body {
 }
 
     .card:hover {
-        background-color: rgba(0, 0, 0, 0.1); 
+        background-color: rgba(0, 0, 0, 0.1);
     }
 
     .card img {
@@ -42,6 +42,34 @@ padding: 0;
  display: flex;
 
     }
+
+.col- {
+    max-width: 500px;
+    margin: auto;
+}
+.form-group {
+margin: 10px;
+}
+.centerr {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row2 {
+    max-width: 500px;
+    margin: auto;
+}
+
+h4 {
+text-align: center;
+}
+.col_red {
+    color: red;
+    text-align: center;
+}
+.old-4 {
+min-height: 600px;
+}
 
 
 
