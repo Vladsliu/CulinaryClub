@@ -44,7 +44,7 @@ namespace CulinaryClub.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Addresses");
+                    b.ToTable("Addresses", (string)null);
                 });
 
             modelBuilder.Entity("CookingClub.Models.AppUser", b =>
@@ -158,7 +158,7 @@ namespace CulinaryClub.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Clubs");
+                    b.ToTable("Clubs", (string)null);
                 });
 
             modelBuilder.Entity("CookingClub.Models.MasterClass", b =>
@@ -196,7 +196,7 @@ namespace CulinaryClub.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("MasterClasses");
+                    b.ToTable("MasterClasses", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
