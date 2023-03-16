@@ -122,5 +122,22 @@ namespace CulinaryClub.Controllers
                 return View(masterClassVM);
             }
         }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var masterClassDetails = await _masterClassRepository.GetByIdAsync(id);
+            if (masterClassDetails == null) return View("Error");
+            return View(masterClassDetails);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteClub(int id)
+        {
+            var masterClassDetails = await _masterClassRepository.GetByIdAsync(id);
+            if (masterClassDetails == null) return View("Error");
+
+            _masterClassRepository.Delete(masterClassDetails);
+            return RedirectToAction("Index");
+        }
     }
 }
