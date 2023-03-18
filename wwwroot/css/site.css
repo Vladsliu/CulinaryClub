@@ -72,6 +72,16 @@ text-align: center;
 min-height: 600px;
 }
 
+.colormyblackof {
+    color: saddlebrown;
+    text-shadow: 0 0 5px #ffd800, 0 0 10px #ffd800;
+}
+.colormyblackof2 {
+    color: black;
+    text-shadow: 0 0 5px #ffd800, 0 0 10px #ffd800;
+}
+
+
 
 
 
