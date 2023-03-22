@@ -13,10 +13,12 @@ namespace CulinaryClub.Controllers
 	{
 		private readonly IMasterClassRepository _masterClassRepository;
         private readonly IPhotoService _photoService;
-		public MasterClassController(IMasterClassRepository masterClassRepository, IPhotoService photoService)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+		public MasterClassController(IMasterClassRepository masterClassRepository, IPhotoService photoService, IHttpContextAccessor httpContextAccessor)
 		{
 			_masterClassRepository = masterClassRepository;
             _photoService = photoService;
+            _httpContextAccessor = httpContextAccessor;
 		}
 		public async Task<IActionResult> Index()
 		{
@@ -31,7 +33,9 @@ namespace CulinaryClub.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var curUserId = _httpContextAccessor.HttpContext?.User.GetUserId();
+            var createMasterClassViewModel = new CreateMasterClassViewModel { AppUserId = curUserId };
+            return View(createMasterClassViewModel);
         }
 
         [HttpPost]
@@ -46,6 +50,7 @@ namespace CulinaryClub.Controllers
                     Title = masterClassVM.Title,
                     Description = masterClassVM.Description,
                     Image = result.Url.ToString(),
+                    AppUserId = masterClassVM.AppUserId,
                     Address = new Address
                     {
                         Street = masterClassVM.Address.Street,

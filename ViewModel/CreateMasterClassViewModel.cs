@@ -11,5 +11,6 @@ namespace CulinaryClub.ViewModel
         public Address Address { get; set; }
         public IFormFile Image { get; set; }
         public MasterClassCategory MasterClassCategory { get; set; }
+        public string AppUserId { get; set; }//?
     }
 }
