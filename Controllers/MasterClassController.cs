@@ -115,7 +115,8 @@ namespace CulinaryClub.Controllers
                     Description = masterClassVM.Description,
                     Image = photoResult.Url.ToString(),
                     AddressId = masterClassVM.AddressId,
-                    Address = masterClassVM.Address
+                    Address = masterClassVM.Address,
+                    AppUserId = userMasterClass.AppUserId,
                 };
 
                 _masterClassRepository.Update(masterClass);

@@ -116,7 +116,8 @@ namespace CulinaryClub.Controllers
 					Description = clubVM.Description,
 					Image = photoResult.Url.ToString(),
 					AddressId = clubVM.AddressId,
-					Address = clubVM.Address
+					Address = clubVM.Address,
+					AppUserId = userClub.AppUserId,
 				};
 
 				_clubRepository.Update(club);
