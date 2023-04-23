@@ -81,6 +81,21 @@ min-height: 600px;
     text-shadow: 0 0 5px #ffd800, 0 0 10px #ffd800;
 }
 
+/*Login page*/
+
+.my-class-login {
+    margin: 0;
+    padding: 0;
+    max-width: 20%;
+    max-height: 20%;
+    font-family: montserrat;
+    background: linear-gradient(120deg, #366a94, #be6ee0);
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
 
 
 
