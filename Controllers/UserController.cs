@@ -1,4 +1,5 @@
-﻿using CulinaryClub.Interfaces;
+﻿using Azure.Identity;
+using CulinaryClub.Interfaces;
 using CulinaryClub.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,6 +30,19 @@ namespace CulinaryClub.Controllers
                 result.Add(userViewModel);
             }
             return View(result);
+        }
+
+        public async Task<IActionResult> Detail(string id)
+        {
+            var user = await _userRepository.GetUserById(id);
+            var userDetailViewmodel = new UserDetailViewModel()
+            {
+                Id = user.Id,
+                UserName = user.UserName,
+                Dishes = user.Dishes,
+                Rating = user.Rating,
+            };
+            return View(userDetailViewmodel);
         }
     }
 }
