@@ -27,5 +27,10 @@ namespace CulinaryClub.Repository
             var userMasterClasses = _context.MasterClasses.Where(r => r.AppUser.Id == curUser);
             return userMasterClasses.ToList();
         }
+
+        public async Task<AppUser> GetUserById(string id)
+        {
+            return await _context.Users.FindAsync(id);
+        }
     }
 }

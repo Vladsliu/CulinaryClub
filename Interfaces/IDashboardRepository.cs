@@ -6,5 +6,6 @@ namespace CulinaryClub.Interfaces
     {
         Task<List<MasterClass>> GetAllUserMasterClasses();
         Task<List<Club>> GetAllUserClubs();
+        Task<AppUser> GetUserById(string id);
     }
 }
