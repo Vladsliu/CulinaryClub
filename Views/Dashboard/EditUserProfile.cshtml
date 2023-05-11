@@ -1,5 +1,33 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using CulinaryClub.ViewModel
+@model EditUserDashboardViewModel
+
+<form method="post" asp-action="EditUserProfile" enctype="multipart/form-data">
+<input type="hidden" id="Id" name="Id" asp-for="Id" />
+	<div class="form-group">
+		<label asp-for="Dishes">Dishes</label>
+		<input asp-for="Dishes" class="form-control" placeholder="Dishes" >
+		<span asp-validation-for="Dishes" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Rating">Rating</label>
+		<input asp-for="Rating" class="form-control" placeholder="Rating">
+		<span asp-validation-for="Rating" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="City">City</label>
+		<input asp-for="City" class="form-control" placeholder="City">
+		<span asp-validation-for="City" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="State">State</label>
+		<input asp-for="State" class="form-control" placeholder="State">
+		<span asp-validation-for="State" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Image">Image</label>
+		<input asp-for="Image" type="file" class="form-control" placeholder="Image">
+		<span asp-validation-for="Image" class="text-danger"></span>
+	</div>
+	<br/>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form> 
