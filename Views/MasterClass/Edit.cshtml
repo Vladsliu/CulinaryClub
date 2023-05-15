@@ -16,12 +16,23 @@
             <input asp-for="Description" class="form-control" placeholder="Enter Description">
             <span asp-validation-for="Description" class="text-danger"></span>
         </div>
+       @* <div class="form-group">
+            <label asp-for="MasterClassCategory">MasterClassCategory</label>
+            <select asp-for="MasterClassCategory" asp-items="@Html.GetEnumSelectList<MasterClassCategory>()" class="form-control form-control">
+                <option>--Select--</option>
+            </select>
+        </div>*@
+
+
         <div class="form-group">
-            <label asp-for="MasterClassCategory">ClubCategory</label>
-            <select asp-for="MasterClassCategory" asp-items="@Html.GetEnumSelectList<ClubCategory>()" class="form-control form-control">
+            <label asp-for="MasterClassCategory">MasterClassCategory</label>
+            <select asp-for="MasterClassCategory" asp-items="@Html.GetEnumSelectList<MasterClassCategory>()" class="form-control" name="MasterClassCategory">
                 <option>--Select--</option>
             </select>
         </div>
+
+
+
         <div class="form-group">
             <label asp-for="Address.Street">Street</label>
             <input asp-for="Address.Street" class="form-control" placeholder="Enter Street">

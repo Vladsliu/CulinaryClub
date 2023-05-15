@@ -42,6 +42,9 @@ namespace CulinaryClub.Controllers
                 UserName = user.UserName,
                 Dishes = user.Dishes,
                 Rating = user.Rating,
+                ProfileImageUrl = user.ProfileImageUrl,
+                City = user.City,
+                State = user.State,
             };
             return View(userDetailViewmodel);
         }

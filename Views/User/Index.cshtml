@@ -1,10 +1,13 @@
-﻿@using CulinaryClub.ViewModel;
-@model List<UserViewModel>
+﻿
 
 <section class="flush-with-above">
     <div class="container">
         <div class="row">
             <div class="col">
+
+            <div> 
+                <h2>All chefs</h2>
+            </div>
                 <table class="table table-hover align-items-center table-borderless">
                     <tbody>
                         @foreach (var user in Model)
@@ -12,11 +15,13 @@
                             <tr class="bg-white">
                                 <th scope="row">
                                     <div class="media align-items-center">
-                                    
-                                        <div class="media-body">
+                                        <img src="@user.ProfileImageUrl" width="100" height="100" alt="Img" style="display: inline-block;">
+                                        <div class="media-body" style="display: inline-block; margin-left: 10px;">
                                             <span class="h6 mb-0">@user.UserName</span>
-                                            <img src="@user.ProfileImageUrl" width="100" height="100" alt="Img">
-
+                                            @{
+                                                var pace = user.Rating == null ? "?" : user.Rating.ToString();
+                                            }
+                                            <p>Rating @pace</p>
                                         </div>
                                     </div>
                                 </th>
@@ -25,11 +30,6 @@
                                         View Profile
                                     </a>
                                 </td>
-                                @{
-                                    var pace = user.Rating == null ? "?" : user.Rating.ToString();
-                                }
-                                <td>rating @pace</td>
-                          
                             </tr>
                             <tr class="table-divider">
                                 <th></th>
